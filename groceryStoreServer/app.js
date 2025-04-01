@@ -3,7 +3,6 @@ import mongoose from 'mongoose'
 import cors from 'cors'
 import dotenv from 'dotenv'
 import supplierRoute from './routes/supplierRoute.js'
-import storeOwnerRoute from './routes/storeOwnerRoute.js'
 import productRoute from './routes/productRoute.js'
 import orderRoute from './routes/orderRoute.js'
 
@@ -30,6 +29,5 @@ mongoose.connect(process.env.MONGODB_URI)
 })
 
 app.use('/suppliers', supplierRoute);
-app.use('/storeOwners', storeOwnerRoute);
 app.use('/products', productRoute);
 app.use('/orders', orderRoute);
