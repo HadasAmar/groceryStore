@@ -30,7 +30,7 @@ export const createOrder = async (req, res) => {
         return res.status(400).json({ message: "ההזמנה חייבת לכלול מוצרים" });
     }
 
-    try {
+    try { 
         // אם לא נתון סטטוס, שים את ברירת המחדל "ממתינה"
         const newOrder = new Order({
             supplierId,
