@@ -23,7 +23,7 @@ export const getOrdersByStoreOwner = async (req, res) => {
 
 // יצירת הזמנה
 export const createOrder = async (req, res) => {
-    const { supplierId, items } = req.body;
+    const { supplierId, supplierName, items } = req.body;
 
     // בודקים אם יש מוצרים בהזמנה
     if (!items || items.length === 0) {
@@ -34,6 +34,7 @@ export const createOrder = async (req, res) => {
         // אם לא נתון סטטוס, שים את ברירת המחדל "ממתינה"
         const newOrder = new Order({
             supplierId,
+            supplierName,
             items,
             status: "ממתינה",  // ברירת מחדל
         });
